@@ -5,11 +5,15 @@
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-link">
-      WEB TECHNOLOGIES
+      Employee Management System
     </li>
   </ul>
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
+      <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     <li *ngIf="router.url !== '/login'">
       <button class="btn" (click)="handleLogout()">LogOut</button>
     </li>
@@ -17,25 +21,11 @@
 </nav>
 <!-- /.navbar -->
 
-<div class="row">
-  <div class="col-12" *ngIf="router.url === '/login'; else dashboard">
-    <router-outlet></router-outlet>
-  </div>
-
-  <ng-template #dashboard>
-    <div class="col-md-2">
-      <app-navbar></app-navbar>
-    </div>
-
-    <div class="col-md-10">
-      <router-outlet></router-outlet>
-    </div>
-  </ng-template>
-</div>
+<app-employee></app-employee>
 
 <footer class="main-footer text-center">
   <!-- left side footer start -->
-  <strong>Copyright &copy; 2019 <a href="#">Group 01</a>.</strong> All rights
+  <strong>Copyright &copy; 2019 <a href="#">IT/17/06</a>.</strong> All rights
   reserved.
   <!-- left side footer end -->
 </footer>
