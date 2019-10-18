@@ -1,213 +1,156 @@
-
-    <!-- appoinment start -->
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <!-- card header start -->
-          <div class="card-header">
-            <h5 class="card-title">User Details</h5>
-          </div>
-          <!-- card header end -->
-          <div class="card-body">
-            <div class="form-inline mb-2">
-              <input class="form-control form-control-sm" type="text" />
-              <button class="btn btn-sm btn-primary ">Search</button>
-            </div>
-  
-            <table class="table table-primary ">
-              <thead>
-                <tr>
-                  <th>Full Name</th>
-                  <th>Date Of Birth</th>
-                  <th>Address</th>
-                  <th>Contact Number</th>
-                  <th>NIC</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>ABC</td>
-                  <td>Kandy</td>
-                  <td>NIC</td>
-                  <td>
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#update"
-                    >
-                      Edit
-                    </button>
-                  </td>
-  
-                  <td>
-                    <button
-                      class="btn btn-danger"
-                      data-toggle="modal"
-                      data-target="#delete"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-  
-                
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-  
-      <!-- delete modal start -->
-      <div
-        class="modal fade"
-        id="delete"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="delete"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <!-- modal content start -->
-          <div class="modal-content">
-            <!-- modal header start -->
-            <div class="modal-header">
-              <h6 class="modal-title">Delete Header</h6>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <!-- modal header end -->
-  
-            <!-- modal body start -->
-            <div class="modal-body">
-              <div class="col-md-12">
-                Do you want to delete?
-              </div>
-            </div>
-            <!-- modal body end -->
-  
-            <!-- modal footer start -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                Yes
-              </button>
-  
-              <button type="button" class="btn btn-default" data-dismiss="modal">
-                No
-              </button>
-            </div>
-            <!-- modal footer end -->
-          </div>
-          <!-- modal content end -->
-        </div>
-      </div>
-      <!-- delete modal end -->
-  
-      <!-- add modal start -->
-      <div
-        class="modal fade"
-        id="update"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="update"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <!-- modal content start -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 class="modal-title">User Details</h6>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <!-- Body start -->
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="start-date">Full Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="fullname"
-                      name="fullname"
-                      placeholder="Enter Full name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="username">User Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="username"
-                      name="username"
-                      placeholder="Enter User name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="exampleInputPassword1"
-                      placeholder="Password"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Confirm Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="confirmPassword1"
-                      placeholder="Confirm Password"
-                    />
-                  </div>
-                </div>
-  
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="School/Institute">School/Institute</label>
-                    <select class="form-control">
-                      <option>Select one</option>
-                      <option>School/Institute-1</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="Zone">Zone</label>
-                    <select class="form-control">
-                      <option>Select one</option>
-                      <option>Zone</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- Body end -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-dismiss="modal"
-                >
-                  Update
-                </button>
-              </div>
-            </div>
-            <!-- modal content end -->
-          </div>
-        </div>
-        <!-- add modal end -->
-      </div>
+<!-- appoinment start -->
+<div class="container mt-5 mb-5">
+  <div class="card">
+    <!-- card header start -->
+    <div class="card-header">
+      <h5 class="card-title">User Details</h5>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Date Of Birth</th>
+          <th>Address</th>
+          <th>Contact Number</th>
+          <th>NIC</th>
+          <th colspan="2" class="no-padding">
+            <div class="form-inline mb-2 mt-2 float-right">
+              <input class="form-control form-control-sm" type="text" />
+              <button class="btn btn-sm btn-primary ml-2 mr-3">Search</button>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{employee.fullname}}</td>
+          <td>{{employee.dateOfBirth | date : "MMM dd y"}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.contactNo}}</td>
+          <td>{{employee.nic}}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update">
+              Edit
+            </button>
+          </td>
+
+          <td class="text-center">
+            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- delete modal start -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <!-- modal header start -->
+      <div class="modal-header">
+        <h6 class="modal-title">Delete Header</h6>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <!-- modal header end -->
+
+      <!-- modal body start -->
+      <div class="modal-body">
+        <div class="col-md-12">
+          Do you want to delete?
+        </div>
+      </div>
+      <!-- modal body end -->
+
+      <!-- modal footer start -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Yes
+        </button>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          No
+        </button>
+      </div>
+      <!-- modal footer end -->
+    </div>
+    <!-- modal content end -->
+  </div>
+</div>
+<!-- delete modal end -->
+
+<!-- add modal start -->
+<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">User Details</h6>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <!-- Body start -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="start-date">Full Name</label>
+              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Full name" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="username">User Name</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter User name" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword1" placeholder="Confirm Password" />
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="School/Institute">School/Institute</label>
+              <select class="form-control">
+                <option>Select one</option>
+                <option>School/Institute-1</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Zone">Zone</label>
+              <select class="form-control">
+                <option>Select one</option>
+                <option>Zone</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Body end -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Update
+          </button>
+        </div>
+      </div>
+      <!-- modal content end -->
+    </div>
+  </div>
+  <!-- add modal end -->
+</div>

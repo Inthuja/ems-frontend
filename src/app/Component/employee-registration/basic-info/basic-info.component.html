@@ -1,0 +1,132 @@
+<div class="container mt-5 mb-5">
+  <div class="card ">
+    <!-- card body start -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="start-date">Full Name</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" [(ngModel)]="basicInfo.fullname"
+              placeholder="Enter Full name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="DateOfBirth"
+              [(ngModel)]="basicInfo.dateOfBirth" placeholder="Enter Date of Birth" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" class="form-control" id="contactNo" [(ngModel)]="basicInfo.contactNo"
+              placeholder="Contact Number" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="basicInfo.address"
+              placeholder="Enter Address" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="basicInfo.email"
+              placeholder="Enter Email" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nicNumber">NIC Number</label>
+            <input type="text" class="form-control" id="nic" [(ngModel)]="basicInfo.nic"
+              placeholder="Enter NIC Number" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Gender">Gender</label>
+            <select class="form-control" [(ngModel)]="basicInfo.gender">
+              <option value="-1" selected disabled hidden>Gender</option>
+              <option value="Femail">Female</option>
+              <option value="Male">Male</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="CivilStatus">Civil Status</label>
+            <select class="form-control" [(ngModel)]="basicInfo.civilStatus">
+              <option value="-1" selected disabled hidden>Civil Status</option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Religion">Religion</label>
+            <select class="form-control" [(ngModel)]="basicInfo.religion">
+              <option value="-1" selected disabled hidden>Religion</option>
+              <option value="Buddist">Buddist</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Christian">Christian</option>
+              <option value="Muslim">Muslim</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="joinDate">Join Date</label>
+            <input type="date" class="form-control" id="joinDate" name="JoinDate" [(ngModel)]="basicInfo.joinDate"
+              placeholder="Enter Join Date" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+        Add
+      </button>
+    </div>
+  </div>
+
+<!-- Create Login start-->
+<div class="card mt-3">
+    <!-- card header start -->
+    <div class="card-header">
+      <h5 class="card-title">Create Login</h5>
+    </div>
+    <!-- card-header end -->
+  
+    <!-- card body start -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter User Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+        Add
+      </button>
+    </div>
+  </div>
+
+</div>
+

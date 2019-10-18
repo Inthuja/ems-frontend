@@ -1,0 +1,49 @@
+<div class="container mt-5 mb-5">
+  {{acadamicInfo| json}}
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="universityName">Qualification Name</label>
+            <input type="text" class="form-control" id="qualificationName" name="qualificationName"
+              [(ngModel)]="acadamicInfo.type" placeholder="Enter University Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="universityName">University Name</label>
+            <input type="text" class="form-control" id="university" name="university"
+              [(ngModel)]="acadamicInfo.institute" placeholder="Enter University Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="yearFrom">Year From</label>
+            <input type="text" class="form-control" id="yearFrom" name="yearFrom" [(ngModel)]="acadamicInfo.fromYear"
+              placeholder="Enter Year From" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="yearTo">Year To</label>
+            <input type="text" class="form-control" id="yearTo" [(ngModel)]="acadamicInfo.toYear"
+              placeholder="Enter Year To" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="grade">Grade Obtained</label>
+            <input type="text" class="form-control" id="grade" [(ngModel)]="acadamicInfo.gradeObtain"
+              placeholder="Enter Grade Obtain" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+        Add
+      </button>
+    </div>
+  </div>
+</div>

@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
     if (this.username == "user" && this.password == "pass") {
       this.username = "";
       this.password = "";
-      this.router.navigate(["/dashboard"]);
+      localStorage.setItem('login', 'true');
+      this.router.navigate(["/secured/dashboard"]);
     } else {
       this.router.navigate(["/login"]);
     }

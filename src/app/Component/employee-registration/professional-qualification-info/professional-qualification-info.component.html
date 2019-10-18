@@ -1,0 +1,39 @@
+<div class="container mt-5 mb-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="instituteName">Institute Name</label>
+            <input type="text" class="form-control" id="institute" name="institute" [(ngModel)]="professionalInfo.institute"
+              placeholder="Enter Institute Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="instituteName">Qualification Name</label>
+            <input type="text" class="form-control" id="qualificationName" name="qualificationName" [(ngModel)]="professionalInfo.type"
+              placeholder="Qualification Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="yearFrom">Year From</label>
+            <input type="text" class="form-control" id="yearFrom" name="yearFrom" [(ngModel)]="professionalInfo.fromYear" placeholder="Enter Year From" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="yearTo">Year To</label>
+            <input type="text" class="form-control" id="yearTo" [(ngModel)]="professionalInfo.toYear" placeholder="Enter Year To" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+        Add
+      </button>
+    </div>
+  </div>
+</div>
