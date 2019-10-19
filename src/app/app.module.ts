@@ -7,7 +7,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./Component/dashboard/dashboard.component";
-import { NavbarComponent } from "./Component/navbar/navbar.component";
 import { EmployeeComponent } from './Component/employee/employee.component';
 import { ViewBasicInfoComponent } from './Component/view-basic-info/view-basic-info.component';
 import { ViewAcademicInfoComponent } from './Component/view-academic-info/view-academic-info.component';
@@ -24,6 +23,9 @@ import { AcadamicInfoComponent } from './Component/employee-registration/acadami
 import { ProfessionalQualificationInfoComponent } from './Component/employee-registration/professional-qualification-info/professional-qualification-info.component';
 import { ViewExperienceInfoComponent } from './Component/view-experience-info/view-experience-info.component';
 import { ExperienceInfoComponent } from './Component/employee-registration/experience-info/experience-info.component';
+import { RoleGuardService } from './services/route-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -31,8 +33,7 @@ import { ExperienceInfoComponent } from './Component/employee-registration/exper
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    NavbarComponent,
+    DashboardComponent, 
     EmployeeComponent,
     ViewBasicInfoComponent,
     ViewAcademicInfoComponent,
@@ -48,10 +49,10 @@ import { ExperienceInfoComponent } from './Component/employee-registration/exper
     BasicInfoComponent,
     AcadamicInfoComponent,
     ProfessionalQualificationInfoComponent,
-    ViewExperienceInfoComponent
+    ViewExperienceInfoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [RoleGuardService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

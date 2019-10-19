@@ -14,12 +14,14 @@ import { AcadamicInfoComponent } from './Component/employee-registration/acadami
 import { ProfessionalQualificationInfoComponent } from './Component/employee-registration/professional-qualification-info/professional-qualification-info.component';
 import { ViewExperienceInfoComponent } from './Component/view-experience-info/view-experience-info.component';
 import { ExperienceInfoComponent } from './Component/employee-registration/experience-info/experience-info.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
+import { RoleGuardService as RoleGuard } from './services/route-guard.service';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   {
-    path: "secured", component: SecuredComponent, children: [
+    path: "secured", component: SecuredComponent, canActivate: [AuthGuard], children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: "dashboard", component: DashboardComponent },
       { path: "all_employee", component: EmployeeTableComponent },
@@ -41,7 +43,12 @@ const routes: Routes = [
           { path: 'professional-info', component: ProfessionalQualificationInfoComponent },
           { path: 'experience', component: ExperienceInfoComponent },
         ]
-      }
+      },
+      { path: 'profile', component: BasicInfoComponent },
+      { path: 'academic-info', component: AcadamicInfoComponent },
+      { path: 'professional-info', component: ProfessionalQualificationInfoComponent },
+      { path: 'experience', component: ExperienceInfoComponent },
+      { path: '**', redirectTo: 'secure' },
     ]
   },
 ];

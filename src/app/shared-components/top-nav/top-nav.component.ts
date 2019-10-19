@@ -10,15 +10,13 @@ export class TopNavComponent implements OnInit {
 
   public path = "";
   constructor(private router: Router) { 
-    this.path = router.url;
-    console.log(this.path)
   }
 
   ngOnInit() {
   }
 
   public logout() {
-    localStorage.removeItem('login');
+    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 }

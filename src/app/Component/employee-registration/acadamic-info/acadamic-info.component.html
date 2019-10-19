@@ -1,15 +1,7 @@
 <div class="container mt-5 mb-5">
-  {{acadamicInfo| json}}
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="universityName">Qualification Name</label>
-            <input type="text" class="form-control" id="qualificationName" name="qualificationName"
-              [(ngModel)]="acadamicInfo.type" placeholder="Enter University Name" />
-          </div>
-        </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="universityName">University Name</label>
@@ -17,6 +9,14 @@
               [(ngModel)]="acadamicInfo.institute" placeholder="Enter University Name" />
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="universityName">Qualification Name</label>
+            <input type="text" class="form-control" id="qualificationName" name="qualificationName"
+              [(ngModel)]="acadamicInfo.type" placeholder="Enter University Name" />
+          </div>
+        </div>
+
         <div class="col-md-6">
           <div class="form-group">
             <label for="yearFrom">Year From</label>

@@ -1,16 +1,19 @@
 <div class="sidebar-container">
+    <div class="sidebar-logo">
+       
+    </div>
   <div class="sidebar-logo">
-      EMS
+      <img src="../../../assets/images/sgic.png">
   </div>
   <ul class="sidebar-navigation">
 <li></li>
   
-    <li>
+    <li >
       <a [routerLink]="['dashboard']" [routerLinkActive]="['active']">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
-    <li>
+    <li *ngIf = "role !== 'employee'">
       <a [routerLink]="['all_employee']" [routerLinkActive]="['active']">
         <i class="fa fa-tachometer" aria-hidden="true"></i> All Employees
       </a>
@@ -20,9 +23,14 @@
         <i class="fa fa-tachometer" aria-hidden="true"></i> Employee Details
       </a>
     </li>
-    <li>
+    <li *ngIf = "role === 'hr'">
       <a [routerLink]="['new-employee']" [routerLinkActive]="['active']">
         <i class="fa fa-tachometer" aria-hidden="true"></i> New Employee
+      </a>
+    </li>
+    <li *ngIf = "role === 'employee'">
+      <a [routerLink]="['my-profile']" [routerLinkActive]="['active']">
+        <i class="fa fa-tachometer" aria-hidden="true"></i> Update Profile
       </a>
     </li>
     

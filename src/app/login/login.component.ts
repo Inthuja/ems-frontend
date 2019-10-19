@@ -12,12 +12,17 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  ngOnInit() {}
+  ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.userName) {
+      this.router.navigate(["/secured/dashboard"]);
+    }
+  }
   handleLogin() {
     if (this.username == "user" && this.password == "pass") {
+      localStorage.setItem('user', JSON.stringify({userName: this.username, role: 'hr'}));
       this.username = "";
       this.password = "";
-      localStorage.setItem('login', 'true');
       this.router.navigate(["/secured/dashboard"]);
     } else {
       this.router.navigate(["/login"]);

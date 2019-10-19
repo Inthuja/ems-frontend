@@ -29,8 +29,8 @@
           <td>{{employee.contactNo}}</td>
           <td>{{employee.nic}}</td>
           <td class="text-center">
-            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update">
-              Edit
+            <button class="btn btn-sm btn-primary" (click) = "navigateView(employee.id)">
+              View
             </button>
           </td>
 
@@ -83,74 +83,3 @@
   </div>
 </div>
 <!-- delete modal end -->
-
-<!-- add modal start -->
-<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <!-- modal content start -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title">User Details</h6>
-        <button type="button" class="close" data-dismiss="modal">
-          &times;
-        </button>
-      </div>
-      <!-- Body start -->
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="start-date">Full Name</label>
-              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Full name" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="username">User Name</label>
-              <input type="text" class="form-control" id="username" name="username" placeholder="Enter User name" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="exampleInputPassword1">Confirm Password</label>
-              <input type="password" class="form-control" id="confirmPassword1" placeholder="Confirm Password" />
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="School/Institute">School/Institute</label>
-              <select class="form-control">
-                <option>Select one</option>
-                <option>School/Institute-1</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="Zone">Zone</label>
-              <select class="form-control">
-                <option>Select one</option>
-                <option>Zone</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!-- Body end -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">
-            Update
-          </button>
-        </div>
-      </div>
-      <!-- modal content end -->
-    </div>
-  </div>
-  <!-- add modal end -->
-</div>

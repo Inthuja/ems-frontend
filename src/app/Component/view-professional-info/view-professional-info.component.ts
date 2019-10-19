@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import ProfessionalQualification from 'src/app/business-entities/professional-qualification';
 
 @Component({
   selector: 'app-view-professional-info',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProfessionalInfoComponent implements OnInit {
 
+  public professionalInfo : ProfessionalQualification = new ProfessionalQualification();
   constructor() { }
 
   ngOnInit() {

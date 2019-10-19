@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  private id : number;
+  constructor(private interactionService: InteractionService) { }
 
-  ngOnInit() {
+
+  ngOnInit() {  
+      this.interactionService.getUser().subscribe(id => {
+        if(id != 0)
+        {this.id = id;}
+      })
   }
 
 }

@@ -4,15 +4,21 @@
       Professional Qualification Details
     </div>
     <div class="card-body">
-      <h6 class="card-title">Institute Name :</h6>
-      <p class="card-text">aaa</p>
-      <h6 class="card-title">Year From :</h6>
-      <p class="card-text">aaa</p>
-      <h6 class="card-title">Year To :</h6>
-      <p class="card-text">aaa</p>
+      <h6 class="title">Institute Name :</h6>
+      <p class="card-text text ml-5">{{professionalInfo.institute}}</p>
+      <h6 class="title">Qualification Name :</h6>
+      <p class="card-text text ml-5">{{professionalInfo.type}}</p>
+      <h6 class="title">Year From :</h6>
+      <p class="card-text text ml-5">{{professionalInfo.fromYear}}</p>
+      <h6 class="title">Year To :</h6>
+      <p class="card-text text ml-5">{{professionalInfo.toYear}}</p>
 
-      <a href="#" class="btn btn-primary">Update</a>
-      <a href="#" class="btn btn-danger">Delete</a>
+      <div class="row float-right">
+          <div class="col mt-3">
+            <button class="btn btn-danger mr-2">Delete</button>
+            <button class="btn btn-primary">Update</button>
+          </div>
+        </div>
     </div>
   </div>
 </div>

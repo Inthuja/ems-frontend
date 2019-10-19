@@ -1,6 +1,6 @@
 
 class Employee {
-
+    id: number
     fullname: string;
     dateOfBirth: Date;
     contactNo: number;

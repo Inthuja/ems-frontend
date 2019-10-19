@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Experience from 'src/app/business-entities/experience';
 
 @Component({
   selector: 'app-view-experience-info',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewExperienceInfoComponent implements OnInit {
 
+  
+  public experience: Experience = new Experience();
   constructor() { }
 
   ngOnInit() {
