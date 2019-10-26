@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: "app-login",
@@ -7,7 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private apiService: ApiService) {}
 
   username: string;
   password: string;
@@ -19,13 +20,18 @@ export class LoginComponent implements OnInit {
     }
   }
   handleLogin() {
-    if (this.username == "user" && this.password == "pass") {
-      localStorage.setItem('user', JSON.stringify({userName: this.username, role: 'hr'}));
-      this.username = "";
-      this.password = "";
-      this.router.navigate(["/secured/dashboard"]);
-    } else {
-      this.router.navigate(["/login"]);
-    }
+    if (this.username !== "" && this.password !== "") {
+      this.apiService.authenticate(this.username, this.password).subscribe(auth => {
+        if (auth) {
+          console.log(auth);
+          localStorage.setItem('user', JSON.stringify(auth));
+          this.username = "";
+          this.password = "";
+          this.router.navigate(["/secured/dashboard"]);
+        } else {
+          this.router.navigate(["/login"]);
+        }
+      })
   }
+}
 }

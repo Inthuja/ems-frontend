@@ -1,4 +1,7 @@
+import Employee from './employe';
+
 class Experience {
+
   id: number;
 
   place: string;
@@ -11,7 +14,9 @@ class Experience {
 
   duration: string;
 
-  userId: string;
+  userDto: Employee;
+
+
 }
 
 

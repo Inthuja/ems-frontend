@@ -1,3 +1,5 @@
+import Employee from './employe';
+
 class ProfessionalQualification {
 
       id: number;
@@ -9,6 +11,8 @@ class ProfessionalQualification {
 	  yearFrom: number;
 	
 	  yearTo: number;
+
+	  userDto: Employee
 }
 
 export default ProfessionalQualification

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeRegistrationComponent implements OnInit {
 
+  public role: string;
   constructor() { }
 
   ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.role = user.role;
   }
 
 }

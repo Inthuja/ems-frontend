@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import Employee from 'src/app/business-entities/employe';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-view-basic-info',
@@ -10,39 +11,56 @@ import { InteractionService } from 'src/app/services/interaction.service';
 })
 export class ViewBasicInfoComponent implements OnInit {
 
-  private id : number;
-  public basicInfo: Employee;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private interactionService: InteractionService) { }
+  private id: number = 0;
+  public basicInfo: any;
+  public nameList: any;
+  public logedUserRole: string;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private interactionService: InteractionService,
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.logedUserRole = user.role;
+
+    if (this.logedUserRole === 'employee') {
+      this.id = user.userId;  
+      this.interactionService.sendUser(this.id);    
+    }    
+
+    if (this.logedUserRole !== 'employee') {
+      this.apiService.getAllEmployeeNames().subscribe(list => {
+        this.nameList = list;
+      })
+
     this.activatedRoute.queryParamMap.subscribe(params => {
-      if(params.get('user')){
+      if (params.get('user')) {
         this.id = parseInt(params.get('user'));
         this.onUserChange();
       }
-
     })
+    }
+
+    if (this.id) {
+      this.getEmployeeById(this.id);
+    }
   }
 
   public navigateUpdate() {
-    this.router.navigate(['/secured/profile'],{queryParams: {user: this.id}});
+    this.router.navigate(['/secured/profile'], { queryParams: { user: this.id }});
   }
 
   public onUserChange() {
     this.interactionService.sendUser(this.id);
-    this.basicInfo = {
-      id:1,
-      fullname: "anushanth",
-      dateOfBirth: new Date('01/013/1993'),
-      joinDate: new Date('10/10/2019'),
-      civilStatus: "Single",
-      contactNo: 756942988,
-      email: 'anushanu@live.com',
-      address: 'chenkalady',
-      religion: 'Hindu',
-      gender: "male",
-      nic: "930131431v"
-    }
-    console.log(this.id)
+    this.getEmployeeById(this.id)
+  }
+
+  public getEmployeeById(id: number) {
+    this.apiService.getEmployeeById(id).subscribe(employee => {
+      this.basicInfo = employee;
+    })
   }
 }

@@ -9,7 +9,7 @@ export class AuthService {
 
     public isAuthenticated(): boolean {
       const user = JSON.parse(localStorage.getItem('user'));
-      if (user.userName) {
+      if (user.username) {
         return true;
       } 
       return false;

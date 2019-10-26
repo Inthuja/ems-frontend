@@ -1,3 +1,5 @@
+import Employee from './employe';
+
 class AcadamicQualification {
 	 id: number;
 	
@@ -10,6 +12,8 @@ class AcadamicQualification {
 	 institute: string;
 	
 	 gradeObtain: number;
+
+	 userDto: Employee;
 }
 
 export default AcadamicQualification

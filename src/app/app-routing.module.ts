@@ -15,7 +15,7 @@ import { ProfessionalQualificationInfoComponent } from './Component/employee-reg
 import { ViewExperienceInfoComponent } from './Component/view-experience-info/view-experience-info.component';
 import { ExperienceInfoComponent } from './Component/employee-registration/experience-info/experience-info.component';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
-import { RoleGuardService as RoleGuard } from './services/route-guard.service';
+import { RoleGuardService as RoleGuard, } from './services/route-guard.service';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: 'full' },
@@ -25,6 +25,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: "dashboard", component: DashboardComponent },
       { path: "all_employee", component: EmployeeTableComponent },
+      {path : "my-profile", redirectTo: "new-employee", pathMatch: "full"},
       {
         path: "employee-details", component: EmployeeComponent,
         children: [
@@ -38,7 +39,7 @@ const routes: Routes = [
       {
         path: 'new-employee', component: EmployeeRegistrationComponent, children: [
           { path: '', redirectTo: 'profile', pathMatch: 'full' },
-          { path: 'profile', component: BasicInfoComponent },
+          { path: 'profile', component: BasicInfoComponent, canActivate: [RoleGuard], data: {expectedRole: ['hr'], redirectTo: 'secured/new-employee/academic-info'}},
           { path: 'academic-info', component: AcadamicInfoComponent },
           { path: 'professional-info', component: ProfessionalQualificationInfoComponent },
           { path: 'experience', component: ExperienceInfoComponent },

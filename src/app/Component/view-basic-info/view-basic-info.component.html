@@ -5,12 +5,10 @@
         <div class="col-md-6">
           Employee Details
         </div>
-        <div class="col-md-3 offset-3 text-right">
+        <div class="col-md-3 offset-3 text-right" *ngIf = "logedUserRole !== 'employee'">
           <select class=" form-control form-control-sm"  [(ngModel)] = "id" (change) = "onUserChange()">
-            <option disabled selected hidden>Employee Name</option>
-            <option value=1>One</option>
-            <option value=2>Two</option>
-            <option value=3>Three</option>
+            <option disabled selected hidden value= -1>Select Employee</option>
+            <option *ngFor = "let name of nameList" value="{{name.id}}">{{name.fullName}}</option>
           </select>
 
         </div>
@@ -20,13 +18,13 @@
       <div class="row" *ngIf="basicInfo">
         <div class="col-md-6">
           <h6 class="title">Full Name :</h6>
-          <p class="card-text text ml-5">{{basicInfo.fullname | titlecase }}</p>
+          <p class="card-text text ml-5">{{basicInfo.fullName | titlecase }}</p>
           <h6 class="title">Date of Birth :</h6>
-          <p class="card-text text ml-5">{{basicInfo.dateOfBirth | date : "MMM dd y"}}</p>
+          <p class="card-text text ml-5">{{basicInfo.dob | date : "MMM dd y"}}</p>
           <h6 class="title">Address :</h6>
           <p class="card-text text ml-5">{{basicInfo.address | titlecase }}</p>
           <h6 class="title">Contact Number :</h6>
-          <p class="card-text text ml-5">{{basicInfo.contactNo}}</p>
+          <p class="card-text text ml-5">{{basicInfo.contactNumber}}</p>
           <h6 class="title">Email Address :</h6>
           <p class="card-text text ml-5">{{basicInfo.email}}</p>
         </div>
@@ -38,14 +36,13 @@
           <h6 class="title">Religion :</h6>
           <p class="card-text text ml-5">{{basicInfo.religion | titlecase }}</p>
           <h6 class="title">Civil Status :</h6>
-          <p class="card-text text ml-5">{{basicInfo.civilStatus | titlecase }}</p>
+          <p class="card-text text ml-5">{{basicInfo.maritalStatus | titlecase }}</p>
           <h6 class="title">Join Date :</h6>
           <p class="card-text text ml-5">{{basicInfo.joinDate | date : "MMM dd y"}} </p>
         </div>
       </div>
       <div class="row float-right">
-        <div class="col mt-3">
-          <button class="btn btn-danger">Delete</button>
+        <div class="col mt-3">          
           <button class="btn btn-primary ml-2" (click)="navigateUpdate()">Update</button>
         </div>
       </div>

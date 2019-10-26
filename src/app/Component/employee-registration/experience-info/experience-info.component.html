@@ -1,6 +1,5 @@
 <div class="container mb-5 mt-5">
-{{experience| json}}
-  <div class="card">
+  <div class="card">  
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
@@ -36,9 +35,15 @@
         </div>
       </div>
       <div class="card-footer text-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
-          Add
-        </button>
+          <button *ngIf = "id; else create" type="button" class="btn btn-primary" (click) = "update()">
+              Update
+            </button>
+          
+          <ng-template #create>
+            <button type="button" class="btn btn-primary" (click) = "createNew()">
+                Add
+              </button>
+          </ng-template>
       </div>
     </div>
     <!-- Experience End -->    

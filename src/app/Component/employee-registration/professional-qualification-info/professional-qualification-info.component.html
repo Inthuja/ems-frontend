@@ -19,21 +19,27 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="yearFrom">Year From</label>
-            <input type="text" class="form-control" id="yearFrom" name="yearFrom" [(ngModel)]="professionalInfo.fromYear" placeholder="Enter Year From" />
+            <input type="text" class="form-control" id="yearFrom" name="yearFrom" [(ngModel)]="professionalInfo.yearFrom" placeholder="Enter Year From" />
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="yearTo">Year To</label>
-            <input type="text" class="form-control" id="yearTo" [(ngModel)]="professionalInfo.toYear" placeholder="Enter Year To" />
+            <input type="text" class="form-control" id="yearTo" [(ngModel)]="professionalInfo.yearTo" placeholder="Enter Year To" />
           </div>
         </div>
       </div>
     </div>
     <div class="card-footer text-right">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
-        Add
-      </button>
+        <button *ngIf = "id; else create" type="button" class="btn btn-primary" (click) = "updateInfo()">
+            Update
+          </button>
+        
+        <ng-template #create>
+          <button type="button" class="btn btn-primary" (click) = "createNew()">
+              Add
+            </button>
+        </ng-template>
     </div>
   </div>
 </div>

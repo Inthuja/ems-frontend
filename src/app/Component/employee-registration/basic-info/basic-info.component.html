@@ -6,7 +6,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="start-date">Full Name</label>
-            <input type="text" class="form-control" id="fullname" name="fullname" [(ngModel)]="basicInfo.fullname"
+            <input type="text" class="form-control" id="fullname" name="fullname" [(ngModel)]="basicInfo.fullName"
               placeholder="Enter Full name" />
           </div>
         </div>
@@ -14,13 +14,13 @@
           <div class="form-group">
             <label for="dateOfBirth">Date of Birth</label>
             <input type="date" class="form-control" id="dateOfBirth" name="DateOfBirth"
-              [(ngModel)]="basicInfo.dateOfBirth" placeholder="Enter Date of Birth" />
+              [(ngModel)]="basicInfo.dob" placeholder="Enter Date of Birth" />
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="contactNumber">Contact Number</label>
-            <input type="text" class="form-control" id="contactNo" [(ngModel)]="basicInfo.contactNo"
+            <input type="text" class="form-control" id="contactNo" [(ngModel)]="basicInfo.contactNumber"
               placeholder="Contact Number" />
           </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="CivilStatus">Civil Status</label>
-            <select class="form-control" [(ngModel)]="basicInfo.civilStatus">
+            <select class="form-control" [(ngModel)]="basicInfo.maritalStatus">
               <option value="-1" selected disabled hidden>Civil Status</option>
               <option value="Single">Single</option>
               <option value="Married">Married</option>
@@ -90,9 +90,16 @@
       </div>
     </div>
     <div class="card-footer text-right">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
-        Add
-      </button>
+      
+        <button *ngIf = "id; else create" type="button" class="btn btn-primary" (click)= "updateEmployee()">
+          Update
+        </button>
+      
+      <ng-template #create>
+        <button type="button" class="btn btn-primary" (click) = "saveEmployee()">
+            Add
+          </button>
+      </ng-template>
     </div>
   </div>
 
@@ -109,20 +116,29 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="userName">User Name</label>
-            <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter User Name" />
+            <label for="userName" >User Name</label>
+            <input type="text" class="form-control" [(ngModel)]="login.userName" id="userName" name="userName" placeholder="Enter User Name" />
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" />
+            <input type="text" class="form-control"  [(ngModel)]="login.password" id="password" name="password" placeholder="Enter Password" />
           </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="Religion">Role</label>
+              <select class="form-control" [(ngModel)]="login.roleDto.id">
+                <option value="-1" selected disabled hidden>Select One</option>
+                <option *ngFor = "let r of roleList" value = "{{r.id}}">{{r.roleName}}</option>                
+              </select>
+            </div>
+          </div>
       </div>
     </div>
     <div class="card-footer text-right">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+      <button type="button" class="btn btn-primary" (click) = "saveLogin()">
         Add
       </button>
     </div>

@@ -1,16 +1,26 @@
 
 class Employee {
-    id: number
-    fullname: string;
-    dateOfBirth: Date;
-    contactNo: number;
-    address: string;
-    email:string;
-    nic: string;
-    gender:string;
-    civilStatus:string;
-    religion:string;
-    joinDate: Date;
+  id : number;
+
+	  fullName :string;
+
+	  gender :string;
+
+	  contactNumber :string;
+
+	  religion :string;
+
+	  email :string;
+
+	  address :string;
+
+	  joinDate: Date;
+
+	  nic :string;
+
+	  dob : Date;
+
+	  maritalStatus :string;
 
 }
 
